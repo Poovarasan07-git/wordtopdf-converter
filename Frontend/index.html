@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Word to PDF Converter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <a class="brand" href="#" aria-label="Word to PDF home">
+            <span class="brand-mark" aria-hidden="true">PDF</span>
+            <h1>Word to PDF</h1>
+        </a>
+
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">How It Works</a>
+        </nav>
+    </header>
+
+
+    <!-- Main Section -->
+    <main>
+
+        <section class="converter">
+
+            <h2>Convert Word to PDF</h2>
+
+            <p>
+                Convert your Word documents into PDF files quickly and easily.
+            </p>
+
+            <!-- File Upload Area -->
+            <div class="upload-box">
+
+                <div class="upload-icon">
+                    📄
+                </div>
+
+                <h3>Upload your Word document</h3>
+
+                <p>
+                    Select a .doc or .docx file from your computer
+                </p>
+
+                <input
+                    type="file"
+                    id="word-file"
+                    accept=".doc,.docx"
+                >
+
+                <label for="word-file" class="choose-button">
+                    Choose Word File
+                </label>
+
+            </div>
+
+
+            <!-- Selected File -->
+            <div class="selected-file">
+
+                <p>
+                    Selected File:
+                    <span id="file-name">No file selected</span>
+                </p>
+
+            </div>
+
+
+            <!-- Convert Button -->
+            <button id="convert-button">
+                Convert to PDF
+            </button>
+
+
+            <!-- Message -->
+            <p id="message"></p>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            © 2026 Word to PDF Converter
+        </p>
+
+        <p>
+            Simple. Fast. Free.
+        </p>
+
+    </footer>
+    <script src="script.js"></script>
+
+</body>
+</html>
