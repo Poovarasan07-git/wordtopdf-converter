@@ -1,3 +1,4 @@
+```javascript
 // Get HTML elements
 
 const wordFile = document.getElementById("word-file");
@@ -76,10 +77,10 @@ convertButton.addEventListener("click", async function () {
 
     try {
 
-        // Send file to FastAPI
+        // Send file to Render FastAPI backend
 
         const response = await fetch(
-            "http://127.0.0.1:8000/convert",
+            "https://wordtopdf-converter-69kw.onrender.com/convert",
             {
                 method: "POST",
                 body: formData
@@ -150,3 +151,4 @@ convertButton.addEventListener("click", async function () {
     convertButton.disabled = false;
 
 });
+```
