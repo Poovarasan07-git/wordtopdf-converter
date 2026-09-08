@@ -1,13 +1,11 @@
-```javascript
-// Get HTML elements
-
+javascript
 const wordFile = document.getElementById("word-file");
 const fileName = document.getElementById("file-name");
 const convertButton = document.getElementById("convert-button");
 const message = document.getElementById("message");
 
 
-// Show selected file name
+// File selection
 
 wordFile.addEventListener("change", function () {
 
@@ -16,68 +14,49 @@ wordFile.addEventListener("change", function () {
         const selectedFile = wordFile.files[0];
 
         fileName.textContent = selectedFile.name;
-
         message.textContent = "Word file selected.";
 
     } else {
 
         fileName.textContent = "No file selected";
-
         message.textContent = "";
     }
 
 });
 
 
-// Convert Word to PDF
+// Word to PDF conversion
 
 convertButton.addEventListener("click", async function () {
-
-    // Check if file is selected
 
     if (wordFile.files.length === 0) {
 
         message.textContent = "Please select a Word file first.";
-
         return;
     }
-
-
-    // Get selected file
 
     const selectedFile = wordFile.files[0];
 
-
-    // Check file type
+    const fileNameLower = selectedFile.name.toLowerCase();
 
     if (
-        !selectedFile.name.toLowerCase().endsWith(".doc") &&
-        !selectedFile.name.toLowerCase().endsWith(".docx")
+        !fileNameLower.endsWith(".doc") &&
+        !fileNameLower.endsWith(".docx")
     ) {
 
         message.textContent = "Please select a valid Word document.";
-
         return;
     }
-
-
-    // Create FormData
 
     const formData = new FormData();
 
     formData.append("file", selectedFile);
 
-
-    // Show converting message
-
     message.textContent = "Converting... Please wait.";
 
     convertButton.disabled = true;
 
-
     try {
-
-        // Send file to Render FastAPI backend
 
         const response = await fetch(
             "https://wordtopdf-converter-69kw.onrender.com/convert",
@@ -87,30 +66,28 @@ convertButton.addEventListener("click", async function () {
             }
         );
 
-
-        // Check response
-
         if (!response.ok) {
 
-            const error = await response.json();
+            let errorMessage = "Conversion failed.";
 
-            throw new Error(
-                error.detail || "Conversion failed."
-            );
+            try {
+
+                const error = await response.json();
+
+                if (error.detail) {
+                    errorMessage = error.detail;
+                }
+
+            } catch (e) {
+                // Ignore JSON parsing error
+            }
+
+            throw new Error(errorMessage);
         }
-
-
-        // Get PDF from response
 
         const pdfBlob = await response.blob();
 
-
-        // Create download URL
-
         const downloadURL = URL.createObjectURL(pdfBlob);
-
-
-        // Create temporary download link
 
         const downloadLink = document.createElement("a");
 
@@ -119,36 +96,27 @@ convertButton.addEventListener("click", async function () {
         downloadLink.download =
             selectedFile.name.replace(/\.(doc|docx)$/i, "") + ".pdf";
 
-
-        // Start download
+        document.body.appendChild(downloadLink);
 
         downloadLink.click();
 
-
-        // Clean up
+        document.body.removeChild(downloadLink);
 
         URL.revokeObjectURL(downloadURL);
-
-
-        // Success message
 
         message.textContent =
             "Conversion successful! PDF downloaded.";
 
-
     } catch (error) {
 
-        console.error(error);
+        console.error("Conversion error:", error);
 
         message.textContent =
             "Something went wrong. Please try again.";
 
     }
 
-
-    // Enable button again
-
     convertButton.disabled = false;
 
 });
-```
+
