@@ -1,4 +1,3 @@
-javascript
 const wordFile = document.getElementById("word-file");
 const fileName = document.getElementById("file-name");
 const convertButton = document.getElementById("convert-button");
