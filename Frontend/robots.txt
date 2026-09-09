@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://wordtopdf-frontend-z0mk.onrender.com/sitemap.xml
