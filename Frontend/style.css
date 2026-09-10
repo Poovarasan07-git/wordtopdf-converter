@@ -57,7 +57,7 @@ header {
 
 header h1 {
     font-size: 24px;
-    color: #2563eb;
+    color: #010715;
 }
 
 
@@ -256,7 +256,7 @@ main {
 }
 
 #convert-button:hover {
-    background-color: #15803d;
+    background-color:tomato;
 }
 
 
