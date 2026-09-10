@@ -1,65 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="favicon.png">
 
+    <!-- Page Title -->
     <title>Word to PDF Converter – Free Online DOC & DOCX to PDF</title>
 
+    <!-- SEO Description -->
     <meta name="description"
-          content="Convert Word documents to PDF online for free. Easily convert DOC and DOCX files to PDF with our simple and fast Word to PDF converter.">
+        content="Convert Word documents to PDF online for free. Easily convert DOC and DOCX files to PDF with our simple, fast and easy-to-use Word to PDF converter.">
 
+    <!-- SEO Keywords -->
     <meta name="keywords"
-          content="Word to PDF, Word to PDF converter, DOC to PDF, DOCX to PDF, convert Word to PDF, free PDF converter">
+        content="Word to PDF, Word to PDF converter, DOC to PDF, DOCX to PDF, convert Word to PDF, free PDF converter, online Word converter, document to PDF">
 
+    <!-- Search Engine Instructions -->
     <meta name="robots" content="index, follow">
 
+    <!-- Author -->
     <meta name="author" content="Word to PDF Converter">
 
-    <meta name="google-site-verification" content="kDZkUmbAku5bvVv1-0JKboTAZxB6LK4Ei3U05fS7VC4" />
+    <!-- Google Search Console -->
+    <meta name="google-site-verification"
+        content="kDZkUmbAku5bvVv1-0JKboTAZxB6LK4Ei3U05fS7VC4" />
 
+    <!-- Canonical URL -->
+    <link rel="canonical"
+        href="https://wordtopdf-frontend-z0mk.onrender.com/">
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:title"
+        content="Word to PDF Converter – Free Online">
+
+    <meta property="og:description"
+        content="Convert DOC and DOCX Word documents to PDF online for free with our simple and easy-to-use converter.">
+
+    <meta property="og:type"
+        content="website">
+
+    <meta property="og:url"
+        content="https://wordtopdf-frontend-z0mk.onrender.com/">
+
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
 
+
 <body>
 
-    <!-- Header -->
+    <!-- =========================
+         Header
+    ========================== -->
+
     <header>
-        <link rel="icon" type="image/png" href="favicon.png">
+
+        <a class="brand" href="#" aria-label="Word to PDF home">
+
+            <!-- Website Icon -->
+            <img
+                src="favicon.png"
+                alt="Word to PDF"
+                class="brand-icon"
+            >
+
+            <!-- Website Name -->
             <h1>Word to PDF</h1>
+
         </a>
 
+
+        <!-- Navigation -->
+
         <nav>
-            <a href="#">Home</a>
-            <a href="#">How It Works</a>
+
+            <a href="#">
+                Home
+            </a>
+
+            <a href="#">
+                How It Works
+            </a>
+
         </nav>
+
     </header>
 
 
-    <!-- Main Section -->
+    <!-- =========================
+         Main Content
+    ========================== -->
+
     <main>
 
         <section class="converter">
 
-            <h2>Convert Word to PDF</h2>
+            <h2>
+                Convert Word to PDF
+            </h2>
+
 
             <p>
                 Convert your Word documents into PDF files quickly and easily.
             </p>
 
-            <!-- File Upload Area -->
+
+            <!-- =========================
+                 File Upload Area
+            ========================== -->
+
             <div class="upload-box">
 
                 <div class="upload-icon">
                     📄
                 </div>
 
-                <h3>Upload your Word document</h3>
+
+                <h3>
+                    Upload your Word document
+                </h3>
+
 
                 <p>
                     Select a .doc or .docx file from your computer
                 </p>
+
 
                 <input
                     type="file"
@@ -67,31 +137,49 @@
                     accept=".doc,.docx"
                 >
 
-                <label for="word-file" class="choose-button">
+
+                <label
+                    for="word-file"
+                    class="choose-button"
+                >
                     Choose Word File
                 </label>
 
             </div>
 
 
-            <!-- Selected File -->
+            <!-- =========================
+                 Selected File
+            ========================== -->
+
             <div class="selected-file">
 
                 <p>
+
                     Selected File:
-                    <span id="file-name">No file selected</span>
+
+                    <span id="file-name">
+                        No file selected
+                    </span>
+
                 </p>
 
             </div>
 
 
-            <!-- Convert Button -->
+            <!-- =========================
+                 Convert Button
+            ========================== -->
+
             <button id="convert-button">
                 Convert to PDF
             </button>
 
 
-            <!-- Message -->
+            <!-- =========================
+                 Conversion Message
+            ========================== -->
+
             <p id="message"></p>
 
         </section>
@@ -99,7 +187,10 @@
     </main>
 
 
-    <!-- Footer -->
+    <!-- =========================
+         Footer
+    ========================== -->
+
     <footer>
 
         <p>
@@ -111,8 +202,11 @@
         </p>
 
     </footer>
+
+
+    <!-- JavaScript -->
     <script src="script.js"></script>
 
 </body>
-</html>
 
+</html>
